@@ -22,32 +22,51 @@ cd dnslab
 
 ### Build and Run the Containers
 
-Use Docker Compose to build the images and start the containers:
+Use Docker Compose to build the Docker image, create a bridge network (docker-dns_mynetwork), and start the container (dns_server).
 
 ```sh
 docker compose up -d --build
 ```
 
-This will build the Docker image from the Dockerfile 
+Check the status of the containers:
 
-## Usage
+```sh
+docker ps
+```
 
-### SSH Between Containers
+You should see the `dns_server` container running.
 
-1. Exec into `ssh-server1`:
+```output
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                    NAMES
+xxxxxxxxxxxx    docker-dns-dns   "named -g -c /etc/bi…"   35 seconds ago   Up 34 seconds   0.0.0.0:53->53/tcp, 0.0.0.0:53->53/udp   dns_server
+```
 
-    ```sh
-    docker exec -it ssh-server1 bash
-    ```
+The bridge network should also be created:
 
-2. Inside `ssh-server1`, SSH into `ssh-server2`:
+```sh
+docker network ls
+```
 
-    ```sh
-    ssh student@ssh-server2
-    ```
+```output
+xxxxxxxxxxxx   docker-dns_mynetwork   bridge    local
+```
 
-    Use the password `pxl` when prompted.
+## Access the Container
 
-## Cleanup
+```bash
+docker exec -it dns_server sh
+```
 
-To stop and remove the containers, run:
+## Stop and Remove the Containers
+
+In the folder where the `docker-compose.yml` file is located, run:
+
+```sh
+docker compose down
+```
+
+```output
+[+] Running 2/2
+ ✔ Container dns_server          Removed               0.3s
+ ✔ Network docker-dns_mynetwork  Removed               0.1s
+```

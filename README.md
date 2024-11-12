@@ -1,11 +1,8 @@
-# dnslab
+# Systems Advanced: DNS Server Lab
 
-# Systems Advanced: DNS Server
-# DNS Lab
+This repository contains the configuration files to set up a lab environment for practicing DNS Server with Docker containers.
 
-This repository contains the configuration files to set up a lab environment for practicing DNS Server with containers.
-
-The lab consists of one container and a compose file to launch....
+The lab consists of one container and a compose file to set up the environment.
 
 ## Setup Instructions
 
@@ -19,8 +16,8 @@ The lab consists of one container and a compose file to launch....
 Clone this repository to your local machine:
 
 ```sh
-git clone https://github.com/PXL-Systems-Advanced/ssh-lab
-cd ssh-lab
+git https://github.com/PXL-Systems-Advanced/dnslab.git
+cd dnslab
 ```
 
 ### Build and Run the Containers
@@ -28,10 +25,10 @@ cd ssh-lab
 Use Docker Compose to build the images and start the containers:
 
 ```sh
-docker compose up -d
+docker compose up -d --build
 ```
 
-This will build the Docker image from the Dockerfile and start two containers, `ssh-server1` and `ssh-server2`.
+This will build the Docker image from the Dockerfile 
 
 ## Usage
 

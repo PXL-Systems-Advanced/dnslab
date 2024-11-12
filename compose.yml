@@ -1,0 +1,20 @@
+
+services:
+  dns:
+    build: ./dns
+    container_name: dns_server
+    networks:
+      mynetwork:
+        ipv4_address: 172.16.238.10
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"    
+    cap_add:
+      - NET_ADMIN
+
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24

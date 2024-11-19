@@ -16,7 +16,7 @@ The lab consists of one container and a compose file to set up the environment.
 Clone this repository to your local machine:
 
 ```sh
-git https://github.com/PXL-Systems-Advanced/dnslab.git
+git clone https://github.com/PXL-Systems-Advanced/dnslab.git
 cd dnslab
 ```
 

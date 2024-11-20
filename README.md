@@ -40,8 +40,8 @@ docker ps
 You should see the `dns_server` container running.
 
 ```output
-CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                    NAMES
-xxxxxxxxxxxx    docker-dns-dns   "named -g -c /etc/bi…"   35 seconds ago   Up 34 seconds   0.0.0.0:53->53/tcp, 0.0.0.0:53->53/udp   dns_server
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                        NAMES
+xxxxxxxxxxxx    docker-dns-dns   "named -g -c /etc/bi…"   35 seconds ago   Up 34 seconds  0.0.0.0:8053->53/tcp, 0.0.0.0:8053->53/udp   dns_server
 ```
 
 The bridge network should also be created:

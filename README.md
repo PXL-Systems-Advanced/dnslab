@@ -51,7 +51,7 @@ docker network ls
 ```
 
 ```output
-xxxxxxxxxxxx   docker-dns_mynetwork   bridge    local
+xxxxxxxxxxxx   dnslab_mynetwork   bridge    local
 ```
 
 ## Access the Container
